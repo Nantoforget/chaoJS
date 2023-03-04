@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                Map
+                    - Map用来存储键值对结构的数据(key-value)
+             */
+            const obj1 = { name: "aaa" };
+            const obj = {
+                name: "hahah",
+                age: 18,
+                [Symbol()]: "haha",
+                [obj1]: "aa",
+            };
+            console.log(obj);
+            const obj2 = {};
+            const map = new Map();
+            map.set("hhh", "hahaha");
+            map.set(obj2, "hahaha");
+            map.set(NaN, "hahaha");
+            console.log(map);
+            console.log(map.get(obj2));
+            //将map转化为数组
+            // const arr = Array.from(map);
+            const arr = [...map];
+            console.log(arr);
+            //遍历map
+            for (const [key, value] of map) {
+                console.log(key, value);
+            }
+            map.forEach((value, key) => {
+                console.log(key, value);
+            });
+            const arr1 = [1, 5, 8, 9, 6, 1, 2];
+            // for in遍历的是下标
+            for (let v in arr1) {
+                console.log(v);
+            }
+            // for of遍历的是值value
+            for (let v of arr1) {
+                console.log(v);
+            }
+        </script>
+    </body>
+</html>

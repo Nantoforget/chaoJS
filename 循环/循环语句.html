@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <style>
+            span {
+                display: inline-block;
+                width: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            /* let num = +prompt("请输入数字");
+            // console.log(typeof num, num);
+             while (num < 100) {
+              console.log(num);
+              num++;
+            }
+            let y = 0;
+            while (num <= 5000) {
+              num = num + 0.05 * num; //num *= 1.05;
+              y++;
+              console.log(y, num);
+            } */
+
+            //while循环(先判断在执行)
+            /* let num = 11;
+            do {
+              console.log(num);
+              num++;
+            } while (num < 10); */
+            //do-while循环至少会执行一次(先执行在判断)
+            /* let num1 = 10;
+            while (num1 < 10) {
+              console.log("a", num1);
+              num1++;
+            } */
+
+            //for循环
+            //100以内所有3的倍数(求他们的个数和总合)
+            // let p = 0;
+            // let num = 0;
+            // for (let t = 1; t <= 100; t++) {
+            //     if (t % 3 == 0) {
+            //         p++;
+            //         console.log(t, p);
+            //         num += t;
+            //         console.log(num);
+            //     }
+            // }
+            /* for (let t = 3; t <= 100; t += 3) {
+                      p++;
+                      console.log(t, p);
+                      num += t;
+                      console.log(num);
+                  } */
+            //1000以内的水仙花数
+            /*let z = 0;
+                   for (let i = 100; i < 10000; i++) {
+                      i = i + "";
+                      let a = i[0];
+                      let b = i[1];
+                      let c = i[2];
+                      if (a ** 3 + b ** 3 + c ** 3 == i) {
+                          i = +i;
+                          console.log(i);
+                      }
+                  }
+                  for (let i = 100; i < 1000; i++) {
+                      i = i + "";
+                      if (i[0] ** 3 + i[1] ** 3 + i[2] ** 3 == i) {
+                          i = +i;
+                          z++;
+                          console.log(typeof i, i, z);
+                      }
+                  }
+                  let str = 23456;
+                  str += "";
+                  console.log(typeof str, str);*/
+            //获取用户输入的大于1的整数(暂时不考虑输入错的情况)
+            //检查这个数字是否是整数
+            /* let num = parseInt(+prompt("请输入数字"));
+            if (isNaN(num) || num <= 1) {
+                alert("输入有误");
+            } else {
+                let arr = [];
+                for (let i = 2; i < num; i++) {
+                    let y = num % i;
+                    arr.push(y);
+                }
+                console.log(arr);
+                let q = 1;
+                for (let z = 0; z < arr.length; z++) {
+                    q *= arr[z];
+                }
+                console.log(q);
+                if (q == 0) {
+                    console.log(`${num}不是质数`);
+                } else {
+                    console.log(`${num}是质数`);
+                }
+            } */
+            /* let num = parseInt(+prompt("请输入数字"));
+            if (isNaN(num) || num <= 1) {
+                alert("输入有误");
+            } else {
+                let y = 1;
+                for (let i = 2; i < num; i++) {
+                    y *= num % i;
+                }
+                console.log("y=", y);
+                if (y == 0) {
+                    console.log(`${num}不是质数`);
+                } else {
+                    console.log(`${num}是质数`);
+                }
+            } */
+            /* let num = parseInt(+prompt("请输入数字"));
+            if (isNaN(num) || num <= 1) {
+                alert("输入有误");
+            } else {
+                let flag = true;
+                for (let i = 2; i < num; i++) {
+                    if (num % i == 0) {
+                        flag = false;
+                    }
+                }
+                if (flag) {
+                    console.log(`${num}是质数`);
+                } else {
+                    console.log(`${num}不是质数`);
+                }
+            } */
+            //嵌套循环
+            for (let i = 0; i < 5; i++) {
+                for (let y = 0; y < i + 1; y++) {
+                    document.write("* ");
+                }
+                document.write("<br>");
+            }
+            document.write("<hr>");
+            for (let i = 0; i < 5; i++) {
+                for (let y = 5 - i; y > 0; y--) {
+                    document.write("* ");
+                }
+                document.write("<br>");
+            }
+            document.write("<hr>");
+            //九九乘法表
+            for (let i = 1; i <= 9; i++) {
+                for (let j = 1; j <= i; j++) {
+                    // let x = j * i;
+                    document.write(`<span>${j}×${i}=${i * j} </span>`);
+                }
+                document.write("<br>");
+            }
+            for (let i = 1; i <= 9; i++) {
+                let s = "";
+                for (let j = 1; j <= i; j++) {
+                    s += j + "×" + i + "=" + i * j + "\t";
+                }
+                console.log(s);
+            }
+            //求100以内的所有质数
+            let s = "";
+            for (let i = 2; i < 100; i++) {
+                let flag = true;
+
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        flag = false;
+                    }
+                }
+                if (flag) {
+                    document.write(`${i} `);
+                    s += i + "\t";
+                    console.log(i);
+                }
+            }
+            console.log(s);
+        </script>
+    </body>
+</html>

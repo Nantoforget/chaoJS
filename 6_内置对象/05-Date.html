@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                Date
+             */
+            //直接通过new Date()创建时间对象时，它创建的是当前行代码执行时的时间
+            // let d = new Date();
+            // console.log(d);
+            // console.log(d.getDay());
+            // // let d1 = new Date("2022-12-23");
+            // // console.log(d1);
+            // let d2 = new Date(2022, 0, 1, 12, 30, 30);
+            // console.log(d2);
+            // console.log(typeof d2.getTime());
+            const d = new Date();
+            let result = d.toLocaleDateString(); //将日期转换为本地的字符串
+            result = d.toLocaleTimeString(); //时间
+            result = d.toLocaleString(); //日期和时间
+            /* 
+                参数：
+                    1.描述语言和国家信息的字符串
+                        zh-CN 中文中国
+                        en-US 英文美国
+                    2.(可选)一个对象做参数
+             */
+            console.log(result);
+            console.log(typeof result);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                Math
+                    - 一个工具类
+                    - 为我们提供了数学运算相关的一些
+             */
+            // console.log(Math.PI);
+            // console.log(Math.max(1, 5, 7, 2, 3));
+            // console.log(Math.pow(2, 9)); //2**9
+            for (let i = 0; i < 20; i++) {
+                let res = Math.random();
+                if (res === 0) {
+                    console.log(res);
+                }
+                // console.log(res);
+            }
+            console.log("---------------------------");
+            // 0-5的随机数
+            const arr = [];
+            for (let i = 0; i < 20; i++) {
+                let res = Math.round(Math.random() * 5);
+                arr.push(res);
+                console.log(res);
+            }
+            console.log(arr);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                作用域(scope)
+                    - 作用域指的是一个变量的可见区域
+                    - 作用域有两种：
+                        全局作用域
+                            - 全局作用域在网页运行时创建，在网页关闭时销毁
+                            - 所有直接编写到script标签中的代码都位于全局作用域中
+                            - 全局作用域中的变量是全局变量，可以在任意位置访问
+                        局部作用域
+                            块作用域
+                                - 块作用域是一种局部作用域
+                                - 块作用域在代码执行时创建，在代码执行完毕时销毁
+                                - 在块作用域中声明的变量是局部变量，只能在块内访问，外部无法访问
+                            函数作用域
+                                - 函数作用域也是一种局部作用域
+                                - 函数作用域在函数调用时产生，调用结束后销毁
+                                - 函数每次调用都会产生一个全新的函数作用域
+                                - 在函数中定义的变量是局部变量，只能在函数内部访问，外部无法访问
+                作用域链
+                    - 当我们使用一个变量时，JS解释器会优先在当前作用域中寻找变量，
+                        如果找到了直接使用
+                        如果没找到，则其上一层作用域中找，找到就使用，找不到就再往上一层作用域寻找，以此类推
+                        如果到全局作用域还没找到，则报错 XXX is not defined
+             */
+            let a = 10;
+            {
+                let a = 11;
+                console.log(a);
+            }
+            // console.log(b);
+            // let a = "变量a";
+            // {
+            //     var b = "变量b";
+            // }
+            /* {
+                let b = "变量b";
+            }
+            console.log(b); //错误 */
+            // f1();
+            // console.log(a);
+            // function f1() {
+            //     console.log("f1");
+            // }
+        </script>
+    </body>
+</html>

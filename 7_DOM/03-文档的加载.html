@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- defer 延迟加载-->
+        <script defer src="/7_DOM/script/script.js"></script>
+        <script>
+            /* 
+                window.onload事件会在窗口的内容加载完成后执行
+                    window.onload = function(){}
+                document的DOMContentLoaded事件会在当前文档加载完毕之后触发
+             */
+        </script>
+    </head>
+    <body>
+        <button id="btn">Click Me</button>
+        <script>
+            const btn = document.querySelector("#btn");
+
+            btn.addEventListener("click", () => {
+                alert("btn.addEventListener");
+            });
+            btn.onclick = function () {
+                console.log("btn.onclick");
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            class Person {
+                name = "孙悟空";
+                age = 18;
+                //实例方法
+                sayHello = () => {
+                    console.log(this); //实例方法中那个实例谁调用就指向谁
+                    console.log(p2 === this); //true
+                };
+                //静态方法(类方法)
+                static sayHello2() {
+                    console.log(this); //class Person 通过类调用的，静态方法中this指向的是当前类
+                }
+            }
+            const p1 = new Person();
+            const p2 = new Person();
+            console.log(p2.sayHello());
+            console.log(Person.sayHello2());
+        </script>
+    </body>
+</html>

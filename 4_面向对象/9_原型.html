@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+
+            */
+            class Person {
+                name = "孙悟空";
+            }
+            const p1 = new Person();
+            const p2 = new Person();
+            const s1 = p1.__proto__ === p2.__proto__;
+            const s2 = p1.__proto__.__proto__ === p2.__proto__.__proto__;
+            console.log(s1); //true
+            console.log(s2); //true
+            function f() {
+                console.log(111);
+            }
+            console.log(f.__proto__);
+            console.log(Person.prototype === Object.getPrototypeOf(p1));
+            console.log(p1 instanceof Person);
+            console.log(Person.prototype);
+            console.log(p1.__proto__);
+        </script>
+    </body>
+</html>

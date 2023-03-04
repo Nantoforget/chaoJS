@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                继承
+                    - 可以通过extends关键来完成继承
+                    - 当一个类继承另一个类时，就相当于将另一个类中的代码复制到了当前类中(简单理解)
+                    - 继承发生时，被继承的类称为父类(超类)，继承的类为子类
+                    - 通过继承可以减少重复的代码
+                    - 可以在不修改一个类的前提对其进行扩展
+                封装 --安全性
+                继承 --扩展性
+                多态 --灵活性
+            */
+            class Animal {
+                constructor(name) {
+                    this.name = name;
+                    // console.log(`${this.name}在叫`);
+                }
+                f() {
+                    console.log(`${this.name}在叫`);
+                }
+            }
+            class Dog extends Animal {
+                /* constructor(name) {
+                    this.name = name;
+                }
+                f1() {
+                    console.log("汪汪汪");
+                } */
+                //在子类中，可以通过创建同名的方法来重写父类的方法
+                f() {
+                    console.log(`${this.name}汪汪汪`);
+                    //调用父类的发f(),使用super.f()
+                    super.f();
+                }
+            }
+            class Cat extends Animal {
+                /* constructor(name) {
+                    this.name = name;
+                }
+                f1() {
+                    console.log("喵喵喵");
+                } */
+                //重写构造函数
+                constructor(name) {
+                    //重写构造函数时，构造函数必须第一行代码为super()
+                    super(name); //调用父类构造函数
+                }
+            }
+            const d = new Dog("李凯");
+            const c = new Cat("汤姆");
+            console.log(d.f());
+            console.log(c);
+        </script>
+    </body>
+</html>

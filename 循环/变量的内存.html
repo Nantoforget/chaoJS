@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>变量的内存</title>
+    </head>
+    <body>
+        <script>
+            /* 
+    变量中并不存储任何值，而是存储值的内存地址！
+     */
+            /* let a = 1;
+    let b = 1;
+    b = 3;
+    console.log(a);
+    console.log(b);
+    console.log('123');
+    // alert(a)
+    let c = '哈哈哈';
+    console.log(`c = ${c}`);
+    let d = [1,2]
+    console.log(typeof c); */
+
+            /* let a = 10;
+    let b = '哈哈';
+    console.log(typeof (a+b)); */
+            /*  let a = [];
+    a = '123';
+    a = '1234px4'
+    // a=[[[]]];
+    console.log(typeof a ,a);
+    // a = Number(a);
+    a = parseInt(a);//转换为整数（从左到右一直识别非合法数字结束）
+    console.log(typeof a , a);
+    let b = '123.3a21';
+    console.log(typeof b ,b);
+    b = parseFloat(b);
+    console.log(typeof b ,b);//转换为浮点数（从左到右一直识别非合法数字结束）
+     */
+            let a = -1;
+            a = -2;
+            a = 0; //false
+            a = "";
+            a = null; //false
+            a = undefined; //false
+            a = [];
+            a = {};
+            a = Infinity;
+            a = Symbol;
+            a = " ";
+            console.log(typeof a, a);
+            a = Boolean(a);
+            console.log(typeof a, a);
+        </script>
+    </body>
+</html>

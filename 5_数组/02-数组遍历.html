@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const arr = ["d", "c", "b", "a"];
+            /* const obj = { arr: [1, 2, 3] };
+            console.log(obj); */
+            for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+            }
+            /* 
+                定义一个类，有name和age两个属性
+                定义几个实例
+                遍历数组，打印未成年信息
+             */
+            class Person {
+                constructor(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+            }
+            const personArr = [
+                new Person("s", 55),
+                new Person("a", 12),
+                new Person("c", 22),
+                new Person("d", 8),
+                new Person("e", 46),
+                new Person("h", 9),
+                new Person("q", 14),
+                new Person("z", 120),
+            ];
+            for (let i = 0; i < personArr.length; i++) {
+                if (personArr[i].age < 18) {
+                    console.log(
+                        `${personArr[i].name}未成年，年龄为${personArr[i].age}`
+                    );
+                }
+            }
+        </script>
+    </body>
+</html>

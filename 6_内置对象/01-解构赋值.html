@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                解构赋值
+             */
+            /* const arr = ["孙悟空", "猪八戒", "沙和尚"];
+            let a, b, c;
+            [a, b, c] = arr; //解构赋值
+            console.log(a, b, c);
+            let [x, y, z] = ["孙悟空", "猪八戒", "沙和尚"]; //声明同时解构
+            console.log(x, y, z);
+            [x, y = 0, z = z] = [1, 2]; //含有默认值，没有赋值就是默认值，有赋值覆盖默认值
+            console.log(x, y, z);
+            let [q, w, e, ...r] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]; //结构数组时，可以使用...设置获取多余的元素
+            console.log(q, w, e, r);
+            function fn() {
+                return [q, w, e, r];
+            }
+            let [u, i, o, p] = fn();
+            console.log(u, i, o, p);
+            //可以通过解构赋值来快速交换两个变量的值
+            let numA = "a";
+            let numB = "b";
+            [numA, numB] = [numB, numA];
+            console.log(numA, numB); */
+            //对象解构
+            const obj = { name: "swk", age: 18, gender: "nan" };
+            let { name, age, gender } = obj; //声明并解构赋值
+            console.log(name, age, gender);
+            let { address } = obj; //没有的属性返回undefined
+            let { name: a, age: b, gender: c, add: d = "hgs" } = obj; //与对象中属性名不同的变量
+            console.log(a, b, c, d);
+        </script>
+    </body>
+</html>

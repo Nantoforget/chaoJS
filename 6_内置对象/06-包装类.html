@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                包装类：
+                    JS中一共有5个包装类(通过 new 包装类)，包装为对应的对象
+                        String
+                        Number
+                        Boolean
+                        BigInt
+                        Symbol
+                        -通过包装类可以将一个原始值包装为一个对象
+                            当我们对一个原始值调用方法或属性时，JS解释器会临时将原始值包装为对应的对象
+                            然后调用这个对象的属性或方法
+             */
+            let str = new String("hello");
+            console.log(str);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>流程控制</title>
+    </head>
+    <body>
+        <script>
+            //条件控制语句
+            //条件分支语句
+            //循环语句
+            /* if (true) {
+        let a = 10;
+        var b = 10;
+        console.log(a, b);
+      }
+      var a = 5;
+      var b = 5;
+      console.log(`哈哈${a}`, a, b); */
+
+            //根据用户输入的整数判断是奇数还是偶数
+            /*  let num = +prompt("请输入一个整数");
+      //   let num = parseInt(+prompt("请输入一个整数"));//取整函数parseInt()
+      if (isNaN(num) || num % 1 !== 0) {
+        alert("输入有误");
+      } else if (num % 2 === 0) {
+        alert(`${num}这个数时偶数`);
+      } else {
+        alert(`${num}这个数时奇数`);
+      } */
+
+            //小明期末成绩
+            /* let ming = +prompt("小明的期末成绩");
+      if (isNaN(ming) || ming < 0 || ming > 100) {
+        alert("输入有误");
+      } else if (ming === 100) {
+        alert("奖励一台BMW");
+      } else if (ming >= 80 && ming <= 99) {
+        alert("奖励一台iphone");
+      } else if (ming >= 60 && ming <= 79) {
+        alert("奖励一本参考书");
+      } else {
+        alert("什么也没有");
+      } */
+            //彩礼
+            let h = +prompt("身高(厘米cm)");
+            let m = +prompt("存款(万元)");
+            let y = +prompt("样貌(数字)");
+            if (isNaN(h) || isNaN(m) || isNaN(y) || h < 0 || y < 0) {
+                alert("输入有误");
+            } else if (h > 180 && m > 1000 && y > 500) {
+                alert("我一定嫁给他");
+            } else if (h > 180 || m > 1000 || y > 500) {
+                alert("嫁吧，比上不足比下有余");
+            } else {
+                alert("不嫁！");
+            }
+        </script>
+    </body>
+</html>

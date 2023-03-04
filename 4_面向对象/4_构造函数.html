@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* class Person {
+                name = "孙悟空";
+                age = 18;
+                gender = "男";
+                sayHello() {
+                    console.log(this.name);
+                }
+            }
+            const p1 = new Person();
+            const p2 = new Person();
+            const p3 = new Person();
+            console.log(p1 instanceof Person); */
+            class Person {
+                name;
+                age;
+                gender;
+                /*
+                    在类中可以添加一个特殊的方法constructor
+                    该方法我们称为构造函数(构造方法)
+                    构造函数会在我们调用类创建对象(new)时执行
+                */
+                constructor(n, a, g) {
+                    console.log("构造函数执行", n, a, g); //用new创建对象会将带着的实参传入构造函数constructor中
+                    this.name = n;
+                    this.age = a;
+                    this.gender = g;
+                }
+            }
+            const p1 = new Person("孙悟空", 18, "男");
+            console.log(p1);
+            const p2 = new Person("猪八戒", 28, "男");
+            console.log(p2);
+        </script>
+    </body>
+</html>

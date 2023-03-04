@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                对象中存储属性的区域实际上有两个：
+                    1.对象自身
+                        - 直接通过对象所添加的属性，位于对象自身中
+                        - 在类中通过x = y 的形式添加的属性，位于对象自身中
+                    2.原型对象(prototype)
+                        - 对象还有一些内容，会存储到其他的对象里(原型对象)
+                        - 在对象中会有一个属性用来存储原型对象，这个属性叫做__proto__
+                        - 原型对象也负责为对象存储属性，
+                            当我们访问对象中的属性时，会优先访问对象自身的属性，
+                            对象自身不包含该属性时，才回到原型对象中寻找
+                        - 会添加到原型对象中的情况：
+                            1.在类中通过xxx(){}方式添加的方法，位于原型中
+                            2.注定想原型中添加的属性或方法
+            */
+            /*
+                访问一个对象的原型对象
+                    对象.__proto__
+                    Object.getPrototypeOf(对象)
+                原型对象中的数据：
+                    1.对象中的数据(属性方法登)
+                    2.constructor(对象的构造函数)
+                注意：
+                    原型对象也有圆形，这样就构成了一条原型链，根据对象的复杂程度不同，原型链的长度也不同但最终都为null
+                原型链：
+                    - 读取对象属性时，会优先对象自身的属性，
+                        如果对象中有，则使用，没有则去对象的原型中寻找
+                        如果圆形征友，则使用，没有则去原型的原型中寻找
+                        直到找到Object对象的原型(Object的原型没有原型(为null))
+                            如果找到最后没有则返回undefined
+                    - 作用域链，是找变量的链，找不到不会报错
+                    - 原型链，是找属性的链，找不到会返回undefined
+            */
+            class Person {
+                name = "孙悟空";
+                f() {
+                    console.log("你好，", this.name);
+                }
+                f1 = () => {
+                    console.log(123);
+                };
+            }
+            const p = new Person();
+            console.log(p);
+            // console.log(p.__proto__);
+            console.log(Object.getPrototypeOf(p) === p.__proto__); //ture
+            const obj = {
+                name: 123,
+                age: 100,
+            };
+            console.log(obj.constructor);
+        </script>
+    </body>
+</html>

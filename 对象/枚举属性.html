@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                枚举属性，之将对象中的所有属性全部获取
+                for-in语句
+                    - 语法：
+                        for(let propName in 对象){
+                            语句...
+                        }
+                    - for-in的循环体会执行多次，有几个属性就会执行几次，、
+                        每次执行时，都会讲一个属性名复制给我们所定义的变量
+                    - 注意：并不是所用的属性都可以枚举(重要的),比如使用符号(symbol)添加的属性 
+             */
+            /* let obj = {
+                name: "孙悟空",
+                age: 18,
+                gender: "男",
+                address: "花果山",
+            };
+            let mySymbol = Symbol();
+            obj[mySymbol] = "Symbol";
+            console.log(obj);
+            for (let propName in obj) {
+                console.log(propName, obj[propName]);
+            } */
+            //这个对象不可以迭代(obj is not iterable)
+            /* for (let propValue of obj) {
+                console.log(propValue);
+            } */
+            /* 
+                对象是可变类型
+             */
+            let obj = {
+                name: "哈哈",
+            };
+            let obj2 = obj;
+            obj2.age = 18;
+            let obj3 = {
+                name: "哈哈",
+            };
+            console.log(obj);
+            console.log(obj2);
+            console.log(obj === obj2);
+            console.log(obj === obj3);
+            a = 10;
+            var b = 10;
+            delete a;
+            delete b;
+            // console.log(a);
+            console.log(b);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                正则表达式：
+                    - 正则表达式用来定义一个规则
+                    - 通过这个规则计算机可以检查一个字符串是否符合规则
+                        或者将字符串中符合规则的内容提取出来
+                    - 正则表达式也是JS中的一个对象
+                        所以要使用正则表达式，需要先创建正则表达式的对象
+                /^1[3456789]\d{9}$/
+                /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/
+             */
+            //new RegeXP() 可以接受两个参数(字符串) 1.正则表达式 2.匹配模式
+            // let reg = new RegExp("a", "i");//匹配模式可以省略
+            /* let reg = /^1[3456789]\d{9}$/;
+            let str = "18238309200";
+            let res = reg.test(str);
+            console.log(res); */
+            /* 
+                正则表达式语法
+             */
+            let reg = /^1[3456789]\d{9}$/;
+            let reg1 =
+                /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+            let reg2 = /\d{11}/gi;
+            let str =
+                "vuiwghae18238309200fvhuisegvh13461602126vhjiwergvg13715678903sdvhughuwdb";
+            let res = reg2.exec(str);
+            while (res) {
+                console.log(res[0]);
+                res = reg2.exec(str);
+            }
+            console.log(str.split(reg2));
+            const arr = [];
+            arr.splice;
+            arr.slice;
+            str.split();
+            // console.log(res);
+        </script>
+    </body>
+</html>

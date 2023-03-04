@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .app .box img {
+                width: 500px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <p id="info"></p>
+            <div class="box">
+                <img src="./images/1.png" alt="" />
+            </div>
+            <button class="btn1">上一张</button>
+            <button class="btn2">下一张</button>
+        </div>
+        <script>
+            const p = document.getElementById("info");
+            const img = document.getElementsByTagName("img")[0];
+            console.log(img);
+            const btn1 = document.getElementsByClassName("btn1")[0];
+            const btn2 = document.getElementsByClassName("btn2")[0];
+            const imgs = [
+                "./images/1.png",
+                "./images/2.png",
+                "./images/3.png",
+                "./images/4.png",
+            ];
+            let y = 1; //直接写路径
+            let x = 0; //把图片路径存在数组中
+            btn1.addEventListener("click", function () {
+                console.log(x);
+                //数组
+                x--;
+                if (x < 0) {
+                    x = imgs.length - 1;
+                }
+                img.src = imgs[x];
+                //直接
+                /*  if (y == 1) {
+                    y = 4;
+                    img.src = `./images/${y}.png`;
+                } else {
+                    y--;
+                    img.src = `./images/${y}.png`;
+                } */
+                p.innerText = `总共${imgs.length}张图片，当前是第${x + 1}张`;
+            });
+            btn2.addEventListener("click", function () {
+                console.log(x);
+                //数组
+                x++;
+                if (x > imgs.length - 1) {
+                    x = 0;
+                }
+                img.src = imgs[x];
+                //直接
+                /*  if (y == 4) {
+                    y = 1;
+                    img.src = `./images/${y}.png`;
+                } else {
+                    y++;
+                    img.src = `./images/${y}.png`;
+                } */
+                p.innerText = `总共${imgs.length}张图片，当前是第${x + 1}张`;
+            });
+            p.innerText = `总共${imgs.length}张图片，当前是第${x + 1}张`;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                递归
+                    - 调用自身的函数称为递归函数
+                    - 递归的作用和循环是基本一致的
+                    核心思想：
+                        将一个大的问题差分为一个一个的小问题
+                    两个要点：
+                        基线条件：递归的终止条件
+                        递归条件：如何对问题进行拆分
+             */
+            //创建一个函数，可以用来求任意数的阶乘
+            //递归解决
+            //循环
+            function f1(num) {
+                let res = 1;
+                for (let i = 1; i <= num; i++) {
+                    res *= i;
+                }
+                return res;
+            }
+            console.log(f1(10));
+            //递归
+            function f2(num) {
+                if (num === 1) {
+                    return 1;
+                }
+                return f2(num - 1) * num;
+            }
+            console.log(f2(10));
+            /*
+                一对小兔子出生后的两个月后每个月都能生出一对小兔子
+                    -编写一个函数，可以用来计算第n个月的兔子的数量
+                    1 -- 2
+                    2 -- 2
+                    3 -- 4
+                    4 -- 6
+                    5 -- 10
+                    当前数是前两个数之和(斐波那契数列)
+            */
+            function f3(n) {
+                if (n < 3) {
+                    return 2;
+                }
+                return f3(n - 1) + f3(n - 2);
+            }
+            console.log(f3(10));
+        </script>
+    </body>
+</html>

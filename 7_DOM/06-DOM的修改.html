@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn1">Click Me</button>
+        <hr />
+        <ul id="list">
+            <li id="swk">孙悟空</li>
+            <li id="zbj">猪八戒</li>
+            <li id="shs">沙和尚</li>
+        </ul>
+        <!-- -------------------------------------------------------------- -->
+        <script>
+            /* 
+                点击按钮，向ul中添加一个唐僧
+             */
+            const btn1 = document.getElementById("btn1");
+            const ul = document.getElementById("list");
+            const swk = document.getElementById("swk");
+            // console.log(btn1);
+            btn1.onclick = function () {
+                // console.log(ul.innerHTML);
+                // ul.innerHTML += "<li id='ts'>唐僧</li>";
+                const li = document.createElement("li");
+                li.id = "ts";
+                li.innerText = "唐僧";
+                //用于给一个节点添加子节点(后面添加)
+                ul.appendChild(li);
+                //可以向元素的任意位置添加元素；两个参数：1.要添加的位置，2.要添加的元素
+                ul.insertAdjacentElement("afterbegin", li);
+                // 两者同时存在时谁在后面谁生效
+                ul.insertAdjacentHTML("beforeend", "<li id='ts'>aaa</li>");
+                //替换节点
+                // swk.replaceWith();
+                // 删除当前元素
+                // swk.remove();
+            };
+        </script>
+    </body>
+</html>

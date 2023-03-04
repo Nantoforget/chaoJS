@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //升序排序(选择排序)
+            const arr1 = [9, 1, 3, 2, 2, 8, 8, 0, 5, 7, 6, 4];
+            function f1(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = i + 1; j < arr.length; j++) {
+                        if (arr[i] > arr[j]) {
+                            let temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+                return arr;
+            }
+            console.time();
+            console.log(f1(arr1));
+            console.timeEnd();
+            const words = [
+                "spray",
+                "limit",
+                "elite",
+                "exuberant",
+                "destruction",
+                "present",
+            ];
+
+            const result = words.filter((word) => word.length > 6);
+
+            console.log(result);
+        </script>
+    </body>
+</html>

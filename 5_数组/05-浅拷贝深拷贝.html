@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                浅拷贝(shallow copy)
+                    - 只对对象的浅层进行复制(只复制一层)
+                    - 如果对象中存储的数据是原始值，那么拷贝的深浅是不重要的
+                    - 浅拷贝只会对对象本身进行复制，不会复制对象中的元素
+                深拷贝(deep copy)
+                    - 深拷贝不仅复制对象本身，还复置对象中的属性和元素
+                    - 有性能问题
+             */
+            const arr = [{ name: "孙悟空" }, { age: 18 }];
+            const arr1 = arr.slice();
+            arr1[0].name = "猪八戒";
+            arr[1].age = 20;
+            console.log(arr);
+            console.log(arr1);
+            const arr3 = structuredClone(arr);
+            console.log(arr3);
+            arr3[0].name = "哈哈哈";
+            const a1 = ["孙悟空", "猪八戒", "沙和尚", "唐僧"];
+            const a2 = [1, 2, 3];
+            function f1(a, b, c) {
+                console.log(a + b + c);
+            }
+            f1(...a2);
+            //对象的复制(浅拷贝)
+            const obj = { name: "孙悟空", age: 18 };
+            const obj2 = {};
+            Object.assign(obj2, obj);
+            // const obj2 = Object.assign({},obj)
+            const obj3 = { address: "哈哈哈", ...obj };
+        </script>
+    </body>
+</html>

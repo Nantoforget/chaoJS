@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                调用函数除了通过函数()这种方式外，还可以通过其他方法来调用函数
+                    比如，我们可以通过调用函数的call()和apply()来调用函数
+                    函数.call()
+                    函数.apply()
+                    - call()和apply()不仅能调用函数，还可以用来指定函数中的this
+                    - call()和apply()的第一个参数，将会成为函数的this
+                    - 通过call()调用函数，函数的实参直接在第一个参数后一个一个的列出来
+                    - 通过apply()调用函数，函数的实参在第一个参数后，以数组的形式传递
+             */
+            /* const obj = { name: "孙悟空" };
+            function fn1(a, b) {
+                console.log("fn1", a, b, this);
+            }
+            fn1.call(obj, 1, 2);
+            fn1.apply(obj, [1, 2]); */
+            /* 
+                bind()是函数的方法，可以用来创建一个新的函数
+                    - bind()可以为新函数绑定this
+                    - bind()可以为新函数绑定参数
+             */
+            /* const obj = { name: "孙悟空" };
+            const obj1 = { name: "哈哈哈" };
+            function fn(a, b) {
+                console.log("fn", a, b, this);
+            }
+            const newFn = fn.bind(obj, 10, 20);
+            // newFn = fn.bind(obj1);//报错
+            newFn(); */
+            /* 
+                箭头函数没有自身的this，它的this有定义是的外层作用于决定
+                    也无法利用call、apply、bind、修改this
+                    同时也没有arguments
+             */
+            const fn = () => {
+                console.log("fn");
+            };
+        </script>
+    </body>
+</html>

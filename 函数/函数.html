@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                函数(Function)
+                    - 函数也是一个对象
+                    函数的定义方式(2和3都属于匿名函数，所以要赋值与变量)
+                    1.函数声明(参数可省略)
+                        function 函数名(参数){
+                            语句...
+                        }
+                    2.函数表达式
+                        const 变量 = function(){
+                            语句...
+                        }
+                    3.箭头函数(打括号里面只有一条代码可以省略大括号)
+                        const 变量 = () =>{
+                            语句...
+                        }
+                        const 变量 = () =>语句...
+                参数
+                        形式参数
+                            -在定义函数时，可以在函数中指定数量不等的形式参数(形参)
+                            -在函数中定义形参，就相当于在函数内部声明了对应的变量但没有进行赋值
+                        实际参数
+                            -在调用函数时，可以在函数的()传递数量不等的实参
+                            -是参会赋值给对应的形参
+             */
+            // let val = prompt("请输入：");
+            function f1(value) {
+                console.log(typeof value, value);
+            }
+            f1(6);
+            console.log(typeof f1, "f1"); //使用typeof检查函数对象时会返回function
+            //匿名函数
+            const f2 = function () {
+                console.log("f2");
+            };
+            f2();
+            const f3 = () => {
+                console.log("f3");
+            };
+            f3();
+            console.log(typeof f3);
+            const f4 = () => console.log("f4");
+            f4();
+            //定义一个可以求任意两个数和的函数
+            let val = +prompt("输入");
+            let val1 = +prompt("输入");
+            console.log(typeof val);
+            /* function sum(a, b) {
+                console.log(a + b);
+            } */
+            /* const sum = function (a, b) {
+                console.log(a + b);
+            }; */
+            const sum = (a, b) => console.log(typeof (a + b), a + b);
+            // const sum = a => console.log(typeof a, a );
+            sum(1, "1");
+            const arr = [1, 2, 3];
+            console.log(typeof arr, arr);
+        </script>
+    </body>
+</html>

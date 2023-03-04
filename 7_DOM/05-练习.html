@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /* 
+                在事件的响应函数中，响应函数绑定给谁this指向谁(箭头函数除外)
+             */
+            window.addEventListener("load", function () {
+                const checkAll = document.getElementById("checkAll");
+                // console.log(checkAll);
+                const hobbies = document.getElementsByName("hobby");
+                // console.log(hobbies);
+                const btnAll = document.getElementById("all");
+                const btnNo = document.getElementById("no");
+                const btnReverse = document.getElementById("reverse");
+                const btnSend = document.getElementById("send");
+                //第一个全选
+                let x = 0;
+                //点击全选会全选或全取消
+                checkAll.addEventListener("click", () => {
+                    // console.log(checkAll.checked);
+                    for (let i in hobbies) {
+                        // console.log(i);
+                        hobbies[i].checked = checkAll.checked ? 1 : 0;
+                    }
+                    x = checkAll.checked ? hobbies.length : 0;
+                });
+                //当所用选项都全选，全选按钮选上，反之亦然
+                for (let i = 0; i < hobbies.length; i++) {
+                    hobbies[i].onclick = function () {
+                        // console.log("-----");
+                        /* if (x < 0) {
+                            x = 0;
+                        } else {
+                            hobbies[i].checked ? x++ : x--;
+                            console.log(x);
+                        } */
+                        // console.log(x);
+                        const checkedBox = document.querySelectorAll(
+                            "[name=hobby]:checked"
+                        );
+                        // console.log(checkedBox);
+                        // if (x === hobbies.length) {
+                        if (checkedBox.length === hobbies.length) {
+                            checkAll.checked = 1;
+                        } else {
+                            checkAll.checked = 0;
+                        }
+                    };
+                }
+                //第二个全选
+                btnAll.onclick = function () {
+                    for (let i in hobbies) {
+                        // console.log(i);
+                        hobbies[i].checked = 1;
+                    }
+                    checkAll.checked = 1;
+                    x = 4;
+                    // console.log(hobbies);
+                };
+                //取消
+                btnNo.addEventListener("click", () => {
+                    for (let i in hobbies) {
+                        hobbies[i].checked = 0;
+                    }
+                    checkAll.checked = 0;
+                    x = 0;
+                });
+                //反选
+                btnReverse.onclick = () => {
+                    // checkAll.checked = 1;
+                    const arr = [];
+                    for (let i = 0; i < hobbies.length; i++) {
+                        hobbies[i].checked = hobbies[i].checked ? 0 : 1;
+                        // console.log(hobbies[i].checked);
+                        arr.push(hobbies[i].checked);
+                    }
+                    // console.log(arr);
+                    x = arr[0] + arr[1] + arr[2] + arr[3];
+                    // console.log(x);
+                    if (x == hobbies.length) {
+                        checkAll.checked = 1;
+                    } else {
+                        checkAll.checked = 0;
+                    }
+                };
+                //提交
+                btnSend.onclick = function () {
+                    const arr = [];
+                    for (let i = 0; i < hobbies.length; i++) {
+                        if (hobbies[i].checked) {
+                            // console.log(hobbies[i]);
+                            arr.push(hobbies[i].value);
+                        }
+                    }
+                    console.log(arr);
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <form action="#">
+            <div>
+                请选择你的爱好：
+                <input type="checkbox" id="checkAll" />全选
+            </div>
+            <div>
+                <input type="checkbox" name="hobby" value="青钢影" />青钢影
+                <input type="checkbox" name="hobby" value="阿卡丽" />阿卡丽
+                <input type="checkbox" name="hobby" value="剑姬" />剑姬
+                <input type="checkbox" name="hobby" value="刀妹" />刀妹
+            </div>
+            <div>
+                <button type="button" id="all">全选</button>
+                <button type="button" id="no">取消</button>
+                <button type="button" id="reverse">反选</button>
+                <button type="button" id="send">提交</button>
+            </div>
+        </form>
+    </body>
+</html>

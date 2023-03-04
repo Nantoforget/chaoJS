@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+
+             */
+            console.log(a);
+            const a = 10;
+            // window.a = 11;
+            // window.console.log(a);
+            /* 
+                var 用来声明变量，作用和let相同，但是var不具有块作用域
+                    - 在全局中使用var声明的变量，都会作为window对象的属性保存
+                    - 使用function声明的函数(函数声明才会，函数表达式和箭头函数不会)，都会作为window的方法保存
+                    - 使用let、const声明的变量不会存储在window对象中，而存在一个秘密的小地方(无法访问)
+             */
+            const f1 = function () {
+                console.log(1);
+            };
+            // window.f1();//出错
+        </script>
+    </body>
+</html>

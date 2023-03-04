@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                this
+                    - 函数在执行时，JS解析器每次都会传递进一个隐含的参数
+                    - 这个参数就叫做this
+                    - this会指向一个对象
+                        - this所指向的对象会根据函数调用方式的不同而不同
+                            1.以函数形式调用时，this指向的是window
+                            2.以方法的像是调用时，this指向的是调用发放的对象
+                    - 通过this可以在方法中引用调用方法的对象
+            */
+            /* function f1() {
+                console.log(this.name);
+            }
+            const obj = {
+                name: "孙悟空",
+                sayHello: f1,
+            };
+            const obj2 = {
+                name: "猪八戒",
+                sayHello: f1,
+            };
+            obj.sayHello();
+            obj2.sayHello(); */
+            // const f1 = () => {
+            //     console.log(this);
+            //     return this;
+            // };
+            // f1();
+            // const obj = {
+            //     name: "孙悟空",
+            //     sayHello: f1,
+            // };
+            // obj.sayHello();
+            const f2 = function () {
+                console.log("f2--->", this);
+            };
+            const f3 = () => {
+                console.log("f3--->", this);
+            };
+            f2(); //window
+            f3(); //window
+            const obj = {
+                name: "唐僧",
+                f2,
+                f3,
+                f4() {
+                    console.log("f4--->", this);
+                },
+                f5: function () {
+                    console.log("f5--->", this);
+                    function f6() {
+                        console.log("f6--->", this);
+                    }
+                    f6(); //window(以函数的形式调用，this指向window)
+                },
+            };
+            obj.f2(); //obj
+            obj.f3(); //window(箭头函数在那里定义的this就指向哪里)
+            obj.f4(); //obj
+            obj.f5(); //obj(一方法的形式调用，this指向的是调用方法的对象)
+        </script>
+    </body>
+</html>
